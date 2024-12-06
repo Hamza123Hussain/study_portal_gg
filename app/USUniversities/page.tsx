@@ -25,8 +25,7 @@ const UsUniversitiesOnly = () => {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error}</p>
   return (
-    <div>
-      <h1>All Universities</h1>
+    <div className=" bg-warning-400">
       {universities.length > 0 ? (
         <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 space-y-2">
           {universities.map((university, index) => (
