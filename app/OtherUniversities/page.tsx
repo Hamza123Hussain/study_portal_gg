@@ -1,5 +1,6 @@
 'use client'
 import CourseCard from '@/components/Card/Main'
+import Loader from '@/components/Loader'
 import { fetchAllUniversities } from '@/functions/GetAllUniversities'
 import { fetchOtherUniversities } from '@/functions/GetOtherUni'
 import { useEffect, useState } from 'react'
@@ -22,7 +23,7 @@ const OtherUniversitiesComponent = () => {
 
     loadUniversities()
   }, [])
-  if (loading) return <p>Loading...</p>
+  if (loading) return <Loader />
   if (error) return <p>Error: {error}</p>
   return (
     <div>
