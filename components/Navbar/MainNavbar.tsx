@@ -20,8 +20,18 @@ export const NavbarComponent = () => {
           <h1>Study Portal</h1>
         </NavbarBrand>
         <NavbarList className="flex items-center text-white">
-          <NavbarItem className=" text-white">Uk Universities</NavbarItem>
-          <NavbarItem className=" text-white">Us Universities</NavbarItem>
+          <NavbarItem
+            className=" text-white"
+            onClick={() => Router.push('/UkUniversities')}
+          >
+            Uk Universities
+          </NavbarItem>
+          <NavbarItem
+            className=" text-white"
+            onClick={() => Router.push('/USUniversities')}
+          >
+            Us Universities
+          </NavbarItem>
 
           {/* Search Bar */}
           <div className="relative">
@@ -38,9 +48,18 @@ export const NavbarComponent = () => {
 
         <NavbarCollapseBtn />
         <NavbarCollapse className=" text-white">
-          <NavbarItem className=" text-white">Uk Universities</NavbarItem>
-          <NavbarItem className=" text-white">Us Universities</NavbarItem>
-
+          <NavbarItem
+            className=" text-white"
+            onClick={() => Router.push('/UkUniversities')}
+          >
+            Uk Universities
+          </NavbarItem>
+          <NavbarItem
+            className=" text-white"
+            onClick={() => Router.push('/USUniversities')}
+          >
+            Us Universities
+          </NavbarItem>
           {/* Search Bar for mobile */}
           <div className="relative">
             <input
