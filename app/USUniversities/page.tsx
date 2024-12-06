@@ -1,12 +1,13 @@
 'use client'
 import CourseCard from '@/components/Card/Main'
-import { fetchAllUniversities } from '@/functions/GetAllUniversities'
 import { fetchUSUniversities } from '@/functions/GetUsUniversities'
 import { useEffect, useState } from 'react'
+
 const UsUniversitiesOnly = () => {
   const [universities, setUniversities] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+
   useEffect(() => {
     const loadUniversities = async () => {
       try {
@@ -22,20 +23,35 @@ const UsUniversitiesOnly = () => {
 
     loadUniversities()
   }, [])
+
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error}</p>
+
   return (
-    <div className=" bg-warning-400">
-      {universities.length > 0 ? (
-        <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 space-y-2">
-          {universities.map((university, index) => (
-            <CourseCard key={index} course={university} />
-          ))}
-        </div>
-      ) : (
-        <p>No universities found.</p>
-      )}
+    <div
+      className="bg-cover bg-center bg-repeat h-full"
+      style={{
+        backgroundImage:
+          'url("    https://cdn.britannica.com/33/4833-050-F6E415FE/Flag-United-States-of-America.jpg")',
+        backgroundPosition: 'center',
+        backgroundSize: 'contain',
+      }}
+    >
+      <div className="bg-opacity-50 bg-black py-8">
+        {' '}
+        {/* Overlay for better readability */}
+        {universities.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
+            {universities.map((university, index) => (
+              <CourseCard key={index} course={university} />
+            ))}
+          </div>
+        ) : (
+          <p className="text-white text-center">No universities found.</p>
+        )}
+      </div>
     </div>
   )
 }
+
 export default UsUniversitiesOnly
