@@ -1,6 +1,6 @@
 'use client'
 import CourseCard from '@/components/Card/Main'
-import { fetchUKUniversities } from '@/functions/GetUkUniversities'
+import { fetchAllUniversities } from '@/functions/GetAllUniversities'
 import { useEffect, useState } from 'react'
 const UKUniversitiesComponent = () => {
   const [universities, setUniversities] = useState<any[]>([])
@@ -9,7 +9,7 @@ const UKUniversitiesComponent = () => {
   useEffect(() => {
     const loadUniversities = async () => {
       try {
-        const data = await fetchUKUniversities(1, 50)
+        const data = await fetchAllUniversities(1, 50)
         setUniversities(data.universities)
       } catch (error) {
         console.error('There is an error:', error)
@@ -25,7 +25,7 @@ const UKUniversitiesComponent = () => {
   if (error) return <p>Error: {error}</p>
   return (
     <div>
-      <h1>UK Universities</h1>
+      <h1>All Universities</h1>
       {universities.length > 0 ? (
         <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 space-y-2">
           {universities.map((university, index) => (
