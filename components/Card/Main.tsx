@@ -1,4 +1,5 @@
 import { CourseCardProps } from '@/utils/CourseCardInterface'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 import {
   FaUniversity,
@@ -8,6 +9,7 @@ import {
 } from 'react-icons/fa'
 
 const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
+  const Router = useRouter()
   return (
     <div className="w-[350px] h-[500px] mx-auto bg-gray-50 shadow-lg rounded-xl overflow-hidden border border-gray-300 hover:shadow-2xl transition-shadow duration-300">
       <div className="h-full flex flex-col">
@@ -79,6 +81,9 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
             {course.Summary}
           </p>
         </div>
+        <button onClick={() => Router.push(`/Single/${course._id}`)}>
+          Show All Details
+        </button>
       </div>
     </div>
   )
