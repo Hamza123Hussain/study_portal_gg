@@ -11,7 +11,7 @@ import {
 const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
   const Router = useRouter()
   return (
-    <div className="mx-auto my-5 bg-white shadow-md rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+    <div className="w-[350px] h-[550px] mx-auto my-5 bg-white shadow-md rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
       <div className="h-full flex flex-col">
         <div className="p-6 flex-grow">
           {/* Course Title */}
