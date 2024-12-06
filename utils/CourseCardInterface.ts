@@ -1,5 +1,6 @@
 export interface CourseCardProps {
   course: {
+    _id: string
     courseTitle: string
     universityName: string
     universityLocation: string
