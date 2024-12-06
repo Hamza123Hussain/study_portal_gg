@@ -1,19 +1,16 @@
 'use client'
-import Flag from 'react-world-flags'
 import {
   Navbar,
   NavbarBrand,
   NavbarCollapse,
   NavbarCollapseBtn,
   NavbarContainer,
-  NavbarItem,
   NavbarList,
 } from 'keep-react'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
-
+import CountryLinks from './CountryLinks'
+import Buttons from './Buttons'
 export const NavbarComponent = () => {
-  const Router = useRouter()
   return (
     <Navbar className="bg-blue-500 rounded-none text-white">
       <NavbarContainer>
@@ -22,93 +19,13 @@ export const NavbarComponent = () => {
           <h1>Study Portal</h1>
         </NavbarBrand>
         <NavbarList className="flex items-center text-white">
-          <NavbarItem
-            className="text-white flex items-center"
-            onClick={() => Router.push('/UkUniversities')}
-          >
-            <Flag
-              code="GB"
-              style={{ width: '20px', height: '15px', marginRight: '8px' }}
-            />
-            <h1>Uk Universities</h1>
-          </NavbarItem>
-          <NavbarItem
-            className="text-white flex items-center"
-            onClick={() => Router.push('/USUniversities')}
-          >
-            <Flag
-              code="US"
-              style={{ width: '20px', height: '15px', marginRight: '8px' }}
-            />
-            <h1>Us Universities</h1>
-          </NavbarItem>
-
-          {/* Search Bar */}
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="pl-10 pr-4 py-2 rounded-full w-64 text-black"
-            />
-            <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-              🔍
-            </span>
-          </div>
-
-          {/* Book Consultation Button */}
-          <NavbarItem
-            className="text-white flex items-center ml-6"
-            onClick={() => Router.push('/book-consultation')}
-          >
-            <button className="bg-green-600 py-2 px-4 rounded-full text-white hover:bg-green-700 transition-all duration-200">
-              Book Consultation
-            </button>
-          </NavbarItem>
+          <CountryLinks />
+          <Buttons />
         </NavbarList>
-
         <NavbarCollapseBtn />
         <NavbarCollapse className="text-white">
-          <NavbarItem
-            className="text-white flex items-center"
-            onClick={() => Router.push('/UkUniversities')}
-          >
-            <Flag
-              code="GB"
-              style={{ width: '20px', height: '15px', marginRight: '8px' }}
-            />
-            <h1>Uk Universities</h1>
-          </NavbarItem>
-          <NavbarItem
-            className="text-white flex items-center"
-            onClick={() => Router.push('/USUniversities')}
-          >
-            <Flag
-              code="US"
-              style={{ width: '20px', height: '15px', marginRight: '8px' }}
-            />
-            <h1>Us Universities</h1>
-          </NavbarItem>
-          {/* Search Bar for mobile */}
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="pl-10 pr-4 py-2 rounded-full w-64"
-            />
-            <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-              🔍
-            </span>
-          </div>
-
-          {/* Book Consultation Button for mobile */}
-          <NavbarItem
-            className="text-white flex items-center mt-4"
-            onClick={() => Router.push('/book-consultation')}
-          >
-            <button className="bg-green-600 py-2 px-4 rounded-full text-white hover:bg-green-700 transition-all duration-200 w-full">
-              Book Consultation
-            </button>
-          </NavbarItem>
+          <CountryLinks />
+          <Buttons />
         </NavbarCollapse>
       </NavbarContainer>
     </Navbar>
