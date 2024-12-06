@@ -54,6 +54,16 @@ export const NavbarComponent = () => {
               🔍
             </span>
           </div>
+
+          {/* Book Consultation Button */}
+          <NavbarItem
+            className="text-white flex items-center ml-6"
+            onClick={() => Router.push('/book-consultation')}
+          >
+            <button className="bg-green-600 py-2 px-4 rounded-full text-white hover:bg-green-700 transition-all duration-200">
+              Book Consultation
+            </button>
+          </NavbarItem>
         </NavbarList>
 
         <NavbarCollapseBtn />
@@ -89,6 +99,16 @@ export const NavbarComponent = () => {
               🔍
             </span>
           </div>
+
+          {/* Book Consultation Button for mobile */}
+          <NavbarItem
+            className="text-white flex items-center mt-4"
+            onClick={() => Router.push('/book-consultation')}
+          >
+            <button className="bg-green-600 py-2 px-4 rounded-full text-white hover:bg-green-700 transition-all duration-200 w-full">
+              Book Consultation
+            </button>
+          </NavbarItem>
         </NavbarCollapse>
       </NavbarContainer>
     </Navbar>
