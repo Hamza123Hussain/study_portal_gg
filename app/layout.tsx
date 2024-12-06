@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { NavbarComponent } from '@/components/Navbar/MainNavbar'
 export const metadata: Metadata = {
-  title: 'GLOBAL GRADS CRM',
-  description: 'ADMIN ONLY',
+  title: 'Study Portal Global Grads',
+  description: 'Open To EveryOne',
 }
 export default function RootLayout({
   children,
