@@ -11,7 +11,7 @@ import {
 const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
   const Router = useRouter()
   return (
-    <div className="w-[350px] h-[500px] mx-auto bg-gray-50 shadow-lg rounded-xl overflow-hidden border border-gray-300 hover:shadow-2xl transition-shadow duration-300">
+    <div className="w-[350px] h-[400px] mx-auto my-5 bg-gray-50 shadow-lg rounded-xl overflow-hidden border border-gray-300 hover:shadow-2xl transition-shadow duration-300">
       <div className="h-full flex flex-col">
         <div className="p-4 flex-grow">
           {/* Course Title */}
@@ -72,14 +72,6 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
               </li>
             </ul>
           </div>
-        </div>
-
-        {/* Summary */}
-        <div className="p-4 bg-gray-100 flex-grow-0 h-[100px]">
-          <p className="text-gray-700 font-semibold">Summary:</p>
-          <p className="text-sm text-gray-700 mt-1 line-clamp-2 overflow-hidden">
-            {course.Summary}
-          </p>
         </div>
         <button onClick={() => Router.push(`/Single/${course._id}`)}>
           Show All Details
