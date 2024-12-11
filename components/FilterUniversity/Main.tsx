@@ -16,12 +16,17 @@ const Main = () => {
       <DialogTrigger className=" w-full flex justify-end px-4">
         <button className=" bg-white rounded-lg p-2">Filter</button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className=" bg-blue-500">
         <DialogHeader>
-          <DialogTitle>Filter Universities</DialogTitle>
+          <DialogTitle className=" text-cyan-50">
+            Filter Universities
+          </DialogTitle>
           {FilterArray.map((element) => (
             <InputField key={element} Label={element} />
           ))}
+          <button className="bg-blue-400 border-2 border-yellow-300 rounded-lg p-2 w-fit text-white">
+            Filter{' '}
+          </button>
         </DialogHeader>
       </DialogContent>
     </Dialog>
