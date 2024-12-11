@@ -1,21 +1,20 @@
+import { FilterInterface } from '@/utils/FilterOption'
 import React, { useState } from 'react'
 
-const InputField = () => {
+const FilterField = ({
+  FilterOption,
+  SetOptions,
+}: {
+  FilterOption: FilterInterface[]
+  SetOptions: any
+}) => {
   // Initial state setup with an array of filter options
-  const [FilterOption, SetOptions] = useState([
-    { Name: 'tuitionFeeNumber', value: 0 },
-    { Name: 'minimumGPA', value: 0 },
-    { Name: 'ielts', value: 0 },
-    { Name: 'toefl', value: 0 },
-    { Name: 'pte', value: 0 },
-    { Name: 'duolingo', value: 0 },
-  ])
   // Handle the change in input fields
   const HandleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // Get the name and value of the input field
     const { name, value } = e.target
     // Update the corresponding filter option in the state array
-    SetOptions((prev) =>
+    SetOptions((prev: FilterInterface[]) =>
       prev.map((option) =>
         option.Name === name
           ? { ...option, value: parseInt(value) || 0 }
@@ -43,4 +42,4 @@ const InputField = () => {
     </>
   )
 }
-export default InputField
+export default FilterField
