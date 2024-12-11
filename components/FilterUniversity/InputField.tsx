@@ -1,6 +1,5 @@
 import { FilterInterface } from '@/utils/FilterOption'
 import React, { useState } from 'react'
-
 const FilterField = ({
   FilterOption,
   SetOptions,
