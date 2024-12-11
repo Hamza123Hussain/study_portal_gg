@@ -8,16 +8,9 @@ import {
 } from '@/components/ui/dialog'
 import FilterField from './InputField'
 import { FilterInterface } from '@/utils/FilterOption'
-
+import { FilterArray } from '@/utils/FilterArray'
 const Main = () => {
-  const [FilterOption, SetOptions] = useState<FilterInterface[]>([
-    { Name: 'tuitionFeeNumber', value: 0 },
-    { Name: 'minimumGPA', value: 0 },
-    { Name: 'ielts', value: 0 },
-    { Name: 'toefl', value: 0 },
-    { Name: 'pte', value: 0 },
-    { Name: 'duolingo', value: 0 },
-  ])
+  const [FilterOption, SetOptions] = useState<FilterInterface[]>(FilterArray)
   return (
     <Dialog>
       <DialogTrigger className=" w-full flex justify-end px-4">
@@ -37,5 +30,4 @@ const Main = () => {
     </Dialog>
   )
 }
-
 export default Main
