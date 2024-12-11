@@ -21,10 +21,10 @@ const Main = () => {
           <DialogTitle className=" text-cyan-50">
             Filter Universities
           </DialogTitle>
-          {FilterArray.map((element) => (
-            <InputField key={element} Label={element} />
-          ))}
-          <button className="bg-blue-400 border-2 border-yellow-300 rounded-lg p-2 w-fit text-white">
+
+          <InputField />
+
+          <button className="bg-blue-400 border-2 mt-2 border-yellow-300 rounded-lg p-2 w-fit text-white">
             Filter{' '}
           </button>
         </DialogHeader>
