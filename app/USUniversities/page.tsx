@@ -1,14 +1,13 @@
 'use client'
 import CourseCard from '@/components/Card/Main'
+import Main from '@/components/FilterUniversity/Main'
 import Loader from '@/components/Loader'
 import { fetchUSUniversities } from '@/functions/GetUsUniversities'
 import { useEffect, useState } from 'react'
-
 const UsUniversitiesOnly = () => {
   const [universities, setUniversities] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-
   useEffect(() => {
     const loadUniversities = async () => {
       try {
@@ -21,13 +20,10 @@ const UsUniversitiesOnly = () => {
         setLoading(false)
       }
     }
-
     loadUniversities()
   }, [])
-
   if (loading) return <Loader />
   if (error) return <p>Error: {error}</p>
-
   return (
     <div
       className="bg-cover bg-center bg-repeat h-full"
@@ -39,8 +35,7 @@ const UsUniversitiesOnly = () => {
       }}
     >
       <div className="bg-opacity-50 bg-black py-8">
-        {' '}
-        {/* Overlay for better readability */}
+        <Main /> {/* Overlay for better readability */}
         {universities.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
             {universities.map((university, index) => (

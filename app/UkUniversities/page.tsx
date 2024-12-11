@@ -1,5 +1,6 @@
 'use client'
 import CourseCard from '@/components/Card/Main'
+import Main from '@/components/FilterUniversity/Main'
 import Loader from '@/components/Loader'
 import { fetchUKUniversities } from '@/functions/GetUkUniversities'
 import { useEffect, useState } from 'react'
@@ -39,8 +40,7 @@ const UKUniversitiesComponent = () => {
       }}
     >
       <div className="bg-opacity-60 bg-black py-8">
-        {' '}
-        {/* Overlay for better readability */}
+        <Main />
         {universities.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
             {universities.map((university, index) => (

@@ -1,5 +1,6 @@
 'use client'
 import CourseCard from '@/components/Card/Main'
+import Main from '@/components/FilterUniversity/Main'
 import Loader from '@/components/Loader'
 import { fetchAllUniversities } from '@/functions/GetAllUniversities'
 import { useEffect, useState } from 'react'
@@ -26,6 +27,7 @@ const UKUniversitiesComponent = () => {
   if (error) return <p>Error: {error}</p>
   return (
     <div>
+      <Main />
       {universities.length > 0 ? (
         <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 space-y-2">
           {universities.map((university, index) => (
