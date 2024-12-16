@@ -26,6 +26,9 @@ const UsUniversitiesOnly = () => {
     }
     loadUniversities()
   }, [])
+  useEffect(() => {
+    console.log('Current Page : ', currentpage)
+  }, [currentpage])
   if (loading) return <Loader />
   if (error) return <p>Error: {error}</p>
   return (
@@ -48,10 +51,13 @@ const UsUniversitiesOnly = () => {
         ) : (
           <p className="text-white text-center">No universities found.</p>
         )}
-        <MainPagination setcurrentpage={setcurrentpage} TotalPages={Pages} />
+        <MainPagination
+          currentpage={currentpage}
+          setcurrentpage={setcurrentpage}
+          TotalPages={Pages}
+        />
       </div>
     </div>
   )
 }
-
 export default UsUniversitiesOnly
