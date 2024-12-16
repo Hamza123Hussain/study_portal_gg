@@ -12,7 +12,6 @@ const UKUniversitiesComponent = () => {
   const [error, setError] = useState<string | null>(null)
   useEffect(() => {
     const loadUniversities = async () => {
-      setLoading(true)
       try {
         const data = await fetchAllUniversities(currentpage)
         setUniversities(data.universities)
