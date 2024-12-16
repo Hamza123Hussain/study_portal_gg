@@ -7,14 +7,15 @@ import { useEffect, useState } from 'react'
 const UKUniversitiesComponent = () => {
   const [universities, setUniversities] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
-  const [Pages, setPage] = useState(1)
+  const [Pages, setPages] = useState(1)
+  const [currentpage, setcurrentpage] = useState(1)
   const [error, setError] = useState<string | null>(null)
   useEffect(() => {
     const loadUniversities = async () => {
       try {
         const data = await fetchAllUniversities(1, 50)
         setUniversities(data.universities)
-        setPage(data.totalPages)
+        setPages(data.totalPages)
       } catch (error) {
         console.error('There is an error:', error)
         setError('Failed to fetch universities')
@@ -38,7 +39,7 @@ const UKUniversitiesComponent = () => {
       ) : (
         <p>No universities found.</p>
       )}
-      <MainPagination TotalPages={Pages} />
+      <MainPagination setcurrentpage={setcurrentpage} TotalPages={Pages} />
     </div>
   )
 }

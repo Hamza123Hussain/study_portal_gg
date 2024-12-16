@@ -11,6 +11,7 @@ const UKUniversitiesComponent = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [Pages, setPage] = useState(1)
+  const [currentpage, setcurrentpage] = useState(1)
   useEffect(() => {
     const loadUniversities = async () => {
       try {
@@ -52,7 +53,7 @@ const UKUniversitiesComponent = () => {
         ) : (
           <p className="text-white text-center">No universities found.</p>
         )}
-        <MainPagination TotalPages={Pages} />
+        <MainPagination setcurrentpage={setcurrentpage} TotalPages={Pages} />
       </div>
     </div>
   )

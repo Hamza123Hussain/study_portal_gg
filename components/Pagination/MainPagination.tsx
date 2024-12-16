@@ -1,6 +1,12 @@
 import { Pagination } from '@nextui-org/react'
 
-export default function MainPagination({ TotalPages }: { TotalPages: number }) {
+export default function MainPagination({
+  TotalPages,
+  setcurrentpage,
+}: {
+  TotalPages: number
+  setcurrentpage: (page: number) => void
+}) {
   return (
     <div className=" flex items-center p-3  justify-center  ">
       <Pagination
