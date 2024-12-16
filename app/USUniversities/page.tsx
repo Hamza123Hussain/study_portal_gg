@@ -14,7 +14,7 @@ const UsUniversitiesOnly = () => {
   useEffect(() => {
     const loadUniversities = async () => {
       try {
-        const data = await fetchUSUniversities(1, 50)
+        const data = await fetchUSUniversities(currentpage)
         setUniversities(data.universities)
         setPage(data.totalPages)
       } catch (error) {
@@ -25,7 +25,7 @@ const UsUniversitiesOnly = () => {
       }
     }
     loadUniversities()
-  }, [])
+  }, [currentpage])
   useEffect(() => {
     console.log('Current Page : ', currentpage)
   }, [currentpage])
