@@ -5,7 +5,6 @@ import Loader from '@/components/Loader'
 import MainPagination from '@/components/Pagination/MainPagination'
 import { fetchUKUniversities } from '@/functions/GetUkUniversities'
 import { useEffect, useState } from 'react'
-
 const UKUniversitiesComponent = () => {
   const [universities, setUniversities] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
@@ -31,7 +30,6 @@ const UKUniversitiesComponent = () => {
 
   if (loading) return <Loader />
   if (error) return <p>Error: {error}</p>
-
   return (
     <div
       className="bg-cover bg-center bg-repeat h-full"
@@ -53,10 +51,13 @@ const UKUniversitiesComponent = () => {
         ) : (
           <p className="text-white text-center">No universities found.</p>
         )}
-        <MainPagination setcurrentpage={setcurrentpage} TotalPages={Pages} />
+        <MainPagination
+          currentpage={currentpage}
+          setcurrentpage={setcurrentpage}
+          TotalPages={Pages}
+        />
       </div>
     </div>
   )
 }
-
 export default UKUniversitiesComponent

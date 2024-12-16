@@ -39,7 +39,11 @@ const UKUniversitiesComponent = () => {
       ) : (
         <p>No universities found.</p>
       )}
-      <MainPagination setcurrentpage={setcurrentpage} TotalPages={Pages} />
+      <MainPagination
+        currentpage={currentpage}
+        setcurrentpage={setcurrentpage}
+        TotalPages={Pages}
+      />
     </div>
   )
 }
