@@ -1,9 +1,10 @@
 // Arrow function to fetch paginated data for UK universities
-export const fetchAllUniversities = async (page = 1, limit = 50) => {
+export const fetchAllUniversities = async (page: any, limit = 50) => {
+  console.log('Page At Function : ', page)
   try {
     // Construct the API URL with query parameters
     const response = await fetch(
-      `http://localhost:5001/Api/Study/GetAllUniversities?_page=1&_limit=100`
+      `http://localhost:5001/Api/Study/GetAllUniversities?page=${page}&limit=50`
     )
 
     if (!response.ok) {

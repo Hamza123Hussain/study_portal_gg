@@ -12,8 +12,9 @@ const UKUniversitiesComponent = () => {
   const [error, setError] = useState<string | null>(null)
   useEffect(() => {
     const loadUniversities = async () => {
+      setLoading(true)
       try {
-        const data = await fetchAllUniversities(1, 50)
+        const data = await fetchAllUniversities(currentpage)
         setUniversities(data.universities)
         setPages(data.totalPages)
       } catch (error) {
@@ -23,9 +24,9 @@ const UKUniversitiesComponent = () => {
         setLoading(false)
       }
     }
-
+    console.log('CURRENT PAGE :', currentpage)
     loadUniversities()
-  }, [])
+  }, [currentpage])
   if (loading) return <Loader />
   if (error) return <p>Error: {error}</p>
   return (
