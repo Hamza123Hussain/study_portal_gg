@@ -31,7 +31,7 @@ const UKUniversitiesComponent = () => {
   return (
     <div>
       {universities.length > 0 ? (
-        <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 space-y-2">
+        <div className=" grid grid-cols-1 gap-5 sm:grid-cols-2 mt-3 md:grid-cols-3 space-y-2">
           {universities.map((university, index) => (
             <CourseCard key={index} course={university} />
           ))}
