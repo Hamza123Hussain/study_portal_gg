@@ -23,7 +23,6 @@ const UKUniversitiesComponent = () => {
         setLoading(false)
       }
     }
-    console.log('CURRENT PAGE :', currentpage)
     loadUniversities()
   }, [currentpage])
   if (loading) return <Loader />

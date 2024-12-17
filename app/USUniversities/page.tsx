@@ -26,9 +26,6 @@ const UsUniversitiesOnly = () => {
     }
     loadUniversities()
   }, [currentpage])
-  useEffect(() => {
-    console.log('Current Page : ', currentpage)
-  }, [currentpage])
   if (loading) return <Loader />
   if (error) return <p>Error: {error}</p>
   return (
