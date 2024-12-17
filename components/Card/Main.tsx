@@ -11,11 +11,11 @@ import {
 const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
   const Router = useRouter()
   return (
-    <div className="w-[350px] h-[550px] mx-auto my-5 bg-white shadow-md rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+    <div className="w-[350px] h-[550px] mx-auto  bg-white shadow-md rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
       <div className="h-full flex flex-col">
         <div className="p-6 flex-grow">
           {/* Course Title */}
-          <h2 className="text-2xl font-semibold text-gray-800 mb-2">
+          <h2 className="text-base font-semibold text-gray-800 mb-2">
             {course.courseTitle}
           </h2>
 
