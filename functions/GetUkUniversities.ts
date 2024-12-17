@@ -3,7 +3,7 @@ export const fetchUKUniversities = async (page = 1, limit = 50) => {
   try {
     // Construct the API URL with query parameters
     const response = await fetch(
-      `http://localhost:5001/Api/Study/GetUkUniversity?page=${page}&limit=50`
+      `http://localhost:5001/Api/Study/GetUkUniversity?page=${page}`
     )
 
     if (!response.ok) {
