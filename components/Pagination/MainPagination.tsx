@@ -21,7 +21,7 @@ export default function MainPagination({
     setcurrentpage(page) // Update the current page
   }
   return (
-    <div className="flex justify-center items-center space-x-2 px-4 py-2 rounded-xl border-4 border-black bg-gray-300 mt-10  w-fit mx-auto">
+    <div className="flex justify-center items-center space-x-2 px-4 py-2 rounded-xl border-4 border-black bg-gray-300 my-10  w-fit mx-auto">
       <PrevButton
         currentPageSet={currentPageSet}
         setCurrentPageSet={setCurrentPageSet}
