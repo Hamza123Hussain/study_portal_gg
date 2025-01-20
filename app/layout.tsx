@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { NavbarComponent } from '@/components/Navbar/MainNavbar'
 import Footer from '@/components/Footer/Footer'
+import { Toaster } from 'react-hot-toast'
 export const metadata: Metadata = {
   title: 'Study Portal Global Grads',
   description: 'Open To EveryOne',
@@ -21,6 +22,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
+        <Toaster />
       </body>
     </html>
   )
