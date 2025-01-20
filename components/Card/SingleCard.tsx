@@ -82,11 +82,8 @@ const CardSingle: React.FC<CourseCardProps> = ({ course }) => {
 
         {/* Show All Details Button */}
         <div className="mt-6 flex justify-center">
-          <button
-            onClick={() => Router.push(`/Single/${course._id}`)}
-            className="px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors duration-200"
-          >
-            Book Your Consultation
+          <button className="px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors duration-200">
+            Add Option
           </button>
         </div>
       </div>
