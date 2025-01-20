@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { NavbarComponent } from '@/components/Navbar/MainNavbar'
-import Main from '@/components/FilterUniversity/Main'
 import Footer from '@/components/Footer/Footer'
 export const metadata: Metadata = {
   title: 'Study Portal Global Grads',
