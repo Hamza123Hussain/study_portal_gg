@@ -18,3 +18,4 @@ export interface CourseCardProps {
     duolingo: string
   }
 }
+export const ApiUrl = 'https://study-portal-backend.vercel.app/'
