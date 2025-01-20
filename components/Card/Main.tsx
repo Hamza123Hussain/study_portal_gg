@@ -43,7 +43,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
               <span className="font-medium">Course Duration:</span>{' '}
               {course.duration}
             </p>
-            <p className="text-sm flex items-center text-gray-600">
+            <p className="text-sm flex items-center text-gray-600 gap-1">
               <FaMoneyBillWave className="mr-2 text-yellow-600" />
               <span className="font-medium">Tuition Fees:</span>{' '}
               {course.tuitionFeeRefined}
