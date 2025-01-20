@@ -4,11 +4,12 @@ import AddToCartButton from '../Cart/AddToCartButton'
 
 const Buttons = ({ _id }: { _id: string }) => {
   const Router = useRouter()
+
   return (
     <>
       {/* Card Footer */}
       <div className="px-6 py-4 bg-gray-100 text-center rounded-b-xl flex flex-col gap-4">
-        <AddToCartButton />
+        <AddToCartButton _id={_id} />
         {/* Show Details Button */}
         <button
           onClick={() => Router.push(`/Single/${_id}`)}
