@@ -9,8 +9,9 @@ import {
 } from 'keep-react'
 import Image from 'next/image'
 import CountryLinks from './CountryLinks'
-import Buttons from './Buttons'
+// import Buttons from './Buttons'
 import { useRouter } from 'next/navigation'
+import MainCart from '../Cart/MainCart'
 export const NavbarComponent = () => {
   const Router = useRouter()
   return (
@@ -25,12 +26,14 @@ export const NavbarComponent = () => {
         </NavbarBrand>
         <NavbarList className="flex items-center text-white">
           <CountryLinks />
-          <Buttons />
+          {/* <Buttons /> */}
+          <MainCart />
         </NavbarList>
         <NavbarCollapseBtn />
         <NavbarCollapse className="text-white">
           <CountryLinks />
-          <Buttons />
+          {/* <Buttons /> */}
+          <MainCart />
         </NavbarCollapse>
       </NavbarContainer>
     </Navbar>
