@@ -3,7 +3,7 @@ export const fetchOtherUniversities = async (page = 1, limit = 50) => {
   try {
     // Construct the API URL with query parameters
     const response = await fetch(
-      `http://localhost:5001/Api/Study/OtherUni?_page=1&_limit=100`
+      `https://study-portal-backend.vercel.app/Api/Study/OtherUni?_page=1&_limit=100`
     )
 
     if (!response.ok) {

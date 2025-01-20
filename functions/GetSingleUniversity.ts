@@ -4,7 +4,7 @@ export const GetSingleCourse = async (id: string) => {
   try {
     // Send GET request to fetch course data by ID
     const response = await axios.get(
-      `http://localhost:5001/Api/Study/SingleCourse?_id=${id}`
+      `https://study-portal-backend.vercel.app/Api/Study/SingleCourse?_id=${id}`
     )
 
     // Check if the response is successful
