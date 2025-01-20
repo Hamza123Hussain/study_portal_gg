@@ -29,8 +29,8 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
             pte={course.pte}
             duolingo={course.duolingo}
           />
-          <Buttons _id={course._id} />
         </div>
+        <Buttons _id={course._id} />
       </div>
     </div>
   )
