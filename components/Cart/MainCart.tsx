@@ -1,10 +1,11 @@
 import React from 'react'
-import CartImage from './CartImage'
+
+import CartModal from './CartModal'
 
 const MainCart = () => {
   return (
     <div>
-      <CartImage />
+      <CartModal userId={'6t66t'} />
     </div>
   )
 }
