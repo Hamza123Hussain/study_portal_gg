@@ -18,6 +18,7 @@ export const AddCourseToCart = async (userId: string, CourseID: string) => {
       toast.success('Course added to cart successfully!', {
         duration: 3000, // Duration of the toast
       })
+      console.log(response.data.course)
       // You can update the UI or state here based on the cart data
       return response.data.course
     }
