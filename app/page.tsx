@@ -4,7 +4,7 @@ import Loader from '@/components/Loader'
 import MainPagination from '@/components/Pagination/MainPagination'
 import { fetchAllUniversities } from '@/functions/GetAllUniversities'
 import { useEffect, useState } from 'react'
-const UKUniversitiesComponent = () => {
+const UniversitiesComponent = () => {
   const [universities, setUniversities] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [Pages, setPages] = useState(1)
@@ -46,4 +46,4 @@ const UKUniversitiesComponent = () => {
     </div>
   )
 }
-export default UKUniversitiesComponent
+export default UniversitiesComponent
