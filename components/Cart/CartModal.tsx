@@ -7,15 +7,18 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 import CartImage from './CartImage'
-import { Cart } from '@/utils/CartInterface'
 import { fetchUserCart } from '@/functions/Cart/GetUserCart'
 import CourseCard from './CourseCard'
+import { useDispatch, useSelector } from 'react-redux'
+import { SetCartData } from '@/utils/Redux/Slice/CartSlice'
+import { RootState } from '@/utils/Redux/Store'
 const CartModal = ({ userId }: { userId: string }) => {
-  const [cart, setCart] = useState<Cart | null>(null)
+  const Cart = useSelector((state: RootState) => state.Cart)
+  const Dispatch = useDispatch()
   const GetCartCoursesOfUser = async () => {
     const CartData = await fetchUserCart(userId)
     if (CartData) {
-      setCart(CartData)
+      Dispatch(SetCartData(CartData))
     }
   }
   useEffect(() => {
@@ -27,7 +30,7 @@ const CartModal = ({ userId }: { userId: string }) => {
         <div className="relative">
           <CartImage />
           <div className="absolute top-0 right-0 bg-indigo-600 text-white rounded-full p-1 text-xs">
-            {cart?.Course.length}
+            {Cart?.Course.length}
           </div>
         </div>
       </DialogTrigger>
@@ -35,16 +38,16 @@ const CartModal = ({ userId }: { userId: string }) => {
         <DialogHeader className="bg-indigo-600 text-white p-6 rounded-t-lg">
           <DialogTitle className="text-xl font-semibold">Your Cart</DialogTitle>
         </DialogHeader>
-        {cart ? (
+        {Cart ? (
           <div className=" flex flex-col gap-2">
             <div className="space-y-6 mt-4 h-[50vh] p-4 overflow-y-auto w-full">
-              {cart.Course.map((course) => (
+              {Cart.Course.map((course) => (
                 <CourseCard course={course} key={course.CourseID} />
               ))}
             </div>
             <div className="bg-indigo-100 p-4 rounded-lg shadow-md">
               <p className="text-sm text-gray-600">
-                Total number of courses: {cart.totalOptions}
+                Total number of courses: {Cart?.Course.length}
               </p>
             </div>
           </div>
