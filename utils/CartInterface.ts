@@ -9,6 +9,8 @@ export interface Course {
   livingExpense: number
   applicationFee: string
   TotalExpense: number
+
+  _id: string
 }
 
 export interface Cart {
