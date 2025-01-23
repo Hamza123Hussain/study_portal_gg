@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import {
   Dialog,
   DialogContent,
@@ -7,30 +7,34 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 import CartImage from './CartImage'
-import { fetchUserCart } from '@/functions/Cart/GetUserCart'
 import CourseCard from './CourseCard'
 import { useDispatch, useSelector } from 'react-redux'
 import { SetCartData } from '@/utils/Redux/Slice/CartSlice'
+import { fetchUserCart } from '@/functions/Cart/GetUserCart'
 import { RootState } from '@/utils/Redux/Store'
+
 const CartModal = ({ userId }: { userId: string }) => {
   const Cart = useSelector((state: RootState) => state.Cart)
   const Dispatch = useDispatch()
+
   const GetCartCoursesOfUser = async () => {
     const CartData = await fetchUserCart(userId)
     if (CartData) {
       Dispatch(SetCartData(CartData))
     }
   }
+
   useEffect(() => {
     GetCartCoursesOfUser()
   }, [userId])
+
   return (
     <Dialog>
       <DialogTrigger>
         <div className="relative">
           <CartImage />
           <div className="absolute top-0 right-0 bg-indigo-600 text-white rounded-full p-1 text-xs">
-            {Cart?.Course.length}
+            {Cart.Course.length}
           </div>
         </div>
       </DialogTrigger>
@@ -38,18 +42,11 @@ const CartModal = ({ userId }: { userId: string }) => {
         <DialogHeader className="bg-indigo-600 text-white p-6 rounded-t-lg">
           <DialogTitle className="text-xl font-semibold">Your Cart</DialogTitle>
         </DialogHeader>
-        {Cart ? (
-          <div className=" flex flex-col gap-2">
-            <div className="space-y-6 mt-4 h-[50vh] p-4 overflow-y-auto w-full">
-              {Cart.Course.map((course) => (
-                <CourseCard course={course} key={course.CourseID} />
-              ))}
-            </div>
-            <div className="bg-indigo-100 p-4 rounded-lg shadow-md">
-              <p className="text-sm text-gray-600">
-                Total number of courses: {Cart?.Course.length}
-              </p>
-            </div>
+        {Cart.Course.length > 0 ? (
+          <div className="space-y-6 mt-4 h-[50vh] p-4 overflow-y-auto w-full">
+            {Cart.Course.map((course, index) => (
+              <CourseCard course={course} key={index} />
+            ))}
           </div>
         ) : (
           <p className="text-center text-gray-600 py-8">Your cart is empty.</p>
@@ -58,4 +55,5 @@ const CartModal = ({ userId }: { userId: string }) => {
     </Dialog>
   )
 }
+
 export default CartModal
