@@ -24,13 +24,13 @@ export const NavbarComponent = () => {
           <Image src={'/G_b-200x200.png'} alt="keep" width={50} height={50} />
           <h1>Study Portal</h1>
         </NavbarBrand>
-        <NavbarList className="flex items-center text-white">
+        <NavbarList className=" hidden  sm:flex items-center text-white">
           <CountryLinks />
           {/* <Buttons /> */}
           <MainCart />
         </NavbarList>
-        <NavbarCollapseBtn />
-        <NavbarCollapse className="text-white">
+        <NavbarCollapseBtn className="sm:hidden" />
+        <NavbarCollapse className="text-white bg-blue-500 border-2 border-yellow-200 rounded-lg">
           <CountryLinks />
           {/* <Buttons /> */}
           <MainCart />
