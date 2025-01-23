@@ -37,7 +37,7 @@ const CartModal = ({ userId }: { userId: string }) => {
         </DialogHeader>
         {cart ? (
           <div className=" flex flex-col gap-2">
-            <div className="space-y-6 mt-4 h-[50vh] overflow-y-auto w-full">
+            <div className="space-y-6 mt-4 h-[50vh] p-4 overflow-y-auto w-full">
               {cart.Course.map((course) => (
                 <CourseCard course={course} key={course.CourseID} />
               ))}
