@@ -1,10 +1,16 @@
 import { AddCourseToCart } from '@/functions/Cart/AddCourseToCart'
+import { AddToCart } from '@/utils/Redux/Slice/CartSlice'
 import React from 'react'
 import { FaShoppingCart } from 'react-icons/fa'
+import { useDispatch } from 'react-redux'
 
 const AddToCartButton = ({ _id }: { _id: string }) => {
+  const Dispatch = useDispatch()
   const AddCourse = async () => {
-    await AddCourseToCart('6t66t', _id)
+    const CourseData: any = await AddCourseToCart('6t66t', _id)
+    if (CourseData) {
+      Dispatch(AddToCart(CourseData))
+    }
   }
   return (
     <button
