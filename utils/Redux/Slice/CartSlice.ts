@@ -12,17 +12,18 @@ export const CartSlice = createSlice({
   initialState,
   reducers: {
     SetCartData: (state, action: PayloadAction<Cart>) => {
-      return action.payload // Return new state with updated cart data
+      return action.payload // Replace state with the new cart data
     },
     AddToCart: (state, action: PayloadAction<Course>) => {
       state.Course.push(action.payload) // Add course to cart
-      state.totalOptions += 1
+      state.totalOptions = state.Course.length
     },
     RemoveFromCart: (state, action: PayloadAction<string>) => {
+      // Remove the course with the matching CourseID
       state.Course = state.Course.filter(
-        (course) => course.CourseID !== action.payload
+        (course) => course._id !== action.payload
       )
-      state.totalOptions -= 1
+      state.totalOptions = state.Course.length
     },
   },
 })
