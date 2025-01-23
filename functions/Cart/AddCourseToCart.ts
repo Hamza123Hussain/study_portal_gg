@@ -13,12 +13,13 @@ export const AddCourseToCart = async (userId: string, CourseID: string) => {
 
     // Handle successful response
     if (response.status === 200) {
-      console.log('Course added to cart:', response.data.cart)
+      // console.log('Course added to cart:', response.data.cart.Course)
       // Display success toast message
       toast.success('Course added to cart successfully!', {
         duration: 3000, // Duration of the toast
       })
       // You can update the UI or state here based on the cart data
+      return response.data.course
     }
   } catch (error: any) {
     // Handle error response
