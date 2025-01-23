@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
     <footer className="bg-blue-500 border-t-2 border-slate-700 text-white">
       {/* Logo and Social Media Icons Section */}
       <div className="container p-6">
-        <section className="flex justify-start gap-48 items-center mb-6">
+        <section className="flex flex-col sm:flex-row justify-between gap-5 items-center mb-6">
           {/* Logo Section */}
           <div className="flex items-center gap-4">
             <Image
@@ -19,7 +19,9 @@ const Footer: React.FC = () => {
               height={50}
               alt="Global Grads"
             />
-            <h6 className="text-xl font-extrabold text-white">Global Grads</h6>
+            <h6 className="text-xl font-extrabold text-white">
+              Global Grads Study Portal
+            </h6>
           </div>
           {/* Social Media Buttons */}
           <div className="flex gap-4">
