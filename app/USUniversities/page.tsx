@@ -1,6 +1,5 @@
 'use client'
 import CourseCard from '@/components/Card/Main'
-import Main from '@/components/FilterUniversity/Main'
 import Loader from '@/components/Loader'
 import MainPagination from '@/components/Pagination/MainPagination'
 import { fetchUSUniversities } from '@/functions/GetUsUniversities'
