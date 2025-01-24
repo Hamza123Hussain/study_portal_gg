@@ -1,3 +1,4 @@
+import { RemoveItemFromCart } from '@/functions/Cart/RemoveCart'
 import { Course } from '@/utils/CartInterface'
 import { RemoveFromCart } from '@/utils/Redux/Slice/CartSlice'
 import React from 'react'
@@ -5,9 +6,10 @@ import { FaCalendarAlt, FaDollarSign } from 'react-icons/fa'
 import { useDispatch } from 'react-redux'
 const CourseCard = ({ course }: { course: Course }) => {
   const Dispatch = useDispatch()
-  const DeleteCourse = (CourseID: string) => {
-    Dispatch(RemoveFromCart(CourseID))
-    console.log('CourseID to delete:', CourseID)
+  const DeleteCourse = async () => {
+    const CourseDeleted = await RemoveItemFromCart('6t66t', course._id)
+    console.log('THE COURSE ID : ', course._id)
+    if (CourseDeleted) Dispatch(RemoveFromCart(course._id))
   }
   return (
     <div
@@ -21,7 +23,7 @@ const CourseCard = ({ course }: { course: Course }) => {
         <p className="text-sm text-gray-600">{course.universityName}</p>
         <p className="text-sm text-gray-500">{course.universityLocation}</p>
         <button
-          onClick={() => DeleteCourse(course._id)}
+          onClick={() => DeleteCourse()}
           className="bg-red-500 hover:bg-red-700 text-white p-4 rounded-lg mt-5 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg active:scale-95"
         >
           Remove Course
