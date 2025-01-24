@@ -12,22 +12,18 @@ import { useDispatch, useSelector } from 'react-redux'
 import { SetCartData } from '@/utils/Redux/Slice/CartSlice'
 import { fetchUserCart } from '@/functions/Cart/GetUserCart'
 import { RootState } from '@/utils/Redux/Store'
-
 const CartModal = ({ userId }: { userId: string }) => {
   const Cart = useSelector((state: RootState) => state.Cart)
   const Dispatch = useDispatch()
-
   const GetCartCoursesOfUser = async () => {
     const CartData = await fetchUserCart(userId)
     if (CartData) {
       Dispatch(SetCartData(CartData))
     }
   }
-
   useEffect(() => {
     GetCartCoursesOfUser()
   }, [userId])
-
   return (
     <Dialog>
       <DialogTrigger>
@@ -55,5 +51,4 @@ const CartModal = ({ userId }: { userId: string }) => {
     </Dialog>
   )
 }
-
 export default CartModal
