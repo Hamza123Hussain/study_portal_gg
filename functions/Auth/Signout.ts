@@ -8,7 +8,6 @@ export const Signout = async () => {
     // Sign out the user using Firebase Auth
     // If successful, send a 200 response
     if (Response.status === 200) {
-      toast.success('Signout Successfully')
       return true
     }
   } catch (error: any) {
