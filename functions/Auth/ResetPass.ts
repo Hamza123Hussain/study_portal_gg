@@ -1,7 +1,6 @@
-import { DeployedAPIURL } from '@/utils/Interface/SignupInterface'
 import axios from 'axios'
 import toast from 'react-hot-toast'
-
+import { DeployedAPIURL } from './Login'
 export const PasswordReset = async (Email: string) => {
   const Response = await axios.get(
     `${DeployedAPIURL}Api/User/ResetPass?Email=${Email}`
