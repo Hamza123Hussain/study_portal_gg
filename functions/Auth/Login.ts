@@ -1,4 +1,3 @@
-import { DeployedAPIURL } from '@/utils/Interface/SignupInterface'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 
@@ -16,3 +15,5 @@ export const LoginUser = async (Email: string, Password: string) => {
     return error
   }
 }
+export const LocalAPIURL = `http://localhost:5000/`
+export const DeployedAPIURL = 'https://quizgame-gg-backend.vercel.app/'
