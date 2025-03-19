@@ -1,6 +1,7 @@
 import { Package } from '@/utils/Interface/PackageInterface'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 const initialState: Package = {
+  _id: '',
   PackageCountry: '',
   PackagePrice: '',
   PackageType: '',
