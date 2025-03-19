@@ -3,6 +3,9 @@ import { CartSlice } from './Slice/CartSlice'
 import { PackageSlice } from './Slice/PackageSlice'
 import UserData from './Slice/UserSlice'
 import UserInput from './User_Slice'
+import PersonalDetails from '@/app/PersonalDetails/page'
+import { formSlice } from './Slice/FormSlice'
+import Flag_Slice from './Slice/FlagSlice'
 
 // Combine all reducers into one root reducer
 const rootReducer = combineReducers({
@@ -13,6 +16,8 @@ const rootReducer = combineReducers({
   // sort: SortSlice.reducer,
   PackageSlice: PackageSlice.reducer,
   userinput: UserInput.reducer,
+  PersonalDetails: formSlice.reducer,
+  Flag: Flag_Slice.reducer,
 })
 
 // Configure the store
