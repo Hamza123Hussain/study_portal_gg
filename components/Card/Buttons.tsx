@@ -1,15 +1,24 @@
 import React from 'react'
 import { useRouter } from 'next/navigation'
 import AddToCartButton from '../Cart/AddToCartButton'
+import { useSelector } from 'react-redux'
+import { RootState } from '@/utils/Redux/Store'
+import PackageModal from '../Package/PackageModal'
 
 const Buttons = ({ _id }: { _id: string }) => {
   const Router = useRouter()
-
+  const PackageSelected = useSelector(
+    (state: RootState) => state.PackageSlice.PackageCountry
+  )
   return (
     <>
       {/* Card Footer */}
       <div className="px-6 py-4 bg-gray-100 text-center rounded-b-xl flex flex-col gap-4">
-        <AddToCartButton _id={_id} />
+        {PackageSelected !== '' ? (
+          <AddToCartButton _id={_id} />
+        ) : (
+          <PackageModal />
+        )}
         {/* Show Details Button */}
         <button
           onClick={() => Router.push(`/Single/${_id}`)}
