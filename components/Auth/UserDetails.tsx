@@ -1,11 +1,9 @@
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog' // Import from your custom component library
-
 import { useSelector } from 'react-redux'
 import ActionButtons from './ActionButtons'
 import { RootState } from '@/utils/Redux/Store'
 const UserDetailsModal = () => {
   const User = useSelector((state: RootState) => state.user)
-
   return (
     <Dialog>
       {/* Trigger button to open the dialog */}
