@@ -4,8 +4,9 @@ import AddToCartButton from '../Cart/AddToCartButton'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/utils/Redux/Store'
 import PackageModal from '../Package/PackageModal'
-
+import AuthModal from '../Auth/AuthModal'
 const Buttons = ({ _id }: { _id: string }) => {
+  const UserName = useSelector((state: RootState) => state.user.Name)
   const Router = useRouter()
   const PackageSelected = useSelector(
     (state: RootState) => state.PackageSlice.PackageCountry
@@ -14,7 +15,9 @@ const Buttons = ({ _id }: { _id: string }) => {
     <>
       {/* Card Footer */}
       <div className="px-6 py-4 bg-gray-100 text-center rounded-b-xl flex flex-col gap-4">
-        {PackageSelected !== '' ? (
+        {UserName === '' ? (
+          <AuthModal />
+        ) : PackageSelected !== '' ? (
           <AddToCartButton _id={_id} />
         ) : (
           <PackageModal />
@@ -30,5 +33,4 @@ const Buttons = ({ _id }: { _id: string }) => {
     </>
   )
 }
-
 export default Buttons
