@@ -1,5 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { CartSlice } from './Slice/CartSlice'
+import { PackageSlice } from './Slice/PackageSlice'
 
 // Combine all reducers into one root reducer
 const rootReducer = combineReducers({
@@ -8,6 +9,7 @@ const rootReducer = combineReducers({
   // user: UserSlice.reducer,
   // location: Location_Slice.reducer,
   // sort: SortSlice.reducer,
+  PackageSlice: PackageSlice.reducer,
 })
 
 // Configure the store
