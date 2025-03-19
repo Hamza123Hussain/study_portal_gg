@@ -1,58 +1,71 @@
 import React from 'react'
-import InputField from './InputField' // Assuming InputField is a reusable component for inputs
+import InputField from './InputField' // Reusable input component
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@/utils/Redux/Store'
 import { setUserDetails } from '@/utils/Redux/User_Slice'
 const Form = ({ isLogin }: { isLogin: boolean }) => {
-  // Use Redux to get current user details from the store
+  // Get user data from Redux state
   const userData = useSelector((state: RootState) => state.userinput)
-  // Dispatch function to send actions to Redux store
   const Dispatch = useDispatch()
-  // Handles change in input fields and updates Redux store
+  // Handle input field changes
   const HandleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // Dispatch updated user data to the Redux store
     Dispatch(
       setUserDetails({
-        Name: isLogin
-          ? userData.Name
-          : e.target.name === 'Name'
-          ? e.target.value
-          : userData.Name, // Only set Name for signup
-        Email: e.target.name === 'Email' ? e.target.value : userData.Email, // Update email field
+        Name:
+          isLogin || e.target.name !== 'Name' ? userData.Name : e.target.value,
+        Email: e.target.name === 'Email' ? e.target.value : userData.Email,
         Password:
-          e.target.name === 'Password' ? e.target.value : userData.Password, // Update password field
+          e.target.name === 'Password' ? e.target.value : userData.Password,
       })
     )
   }
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-4">
       {/* Email Field */}
       <InputField
-        Value={userData.Email} // Email value from Redux state
-        Name="Email" // Field name
-        type="text" // Input type
-        HandleChange={HandleChange} // Handler for input change
-        PlaceHolder="Enter Your Email" // Placeholder text for the input
+        Value={userData.Email}
+        Name="Email"
+        type="text"
+        HandleChange={HandleChange}
+        PlaceHolder="Enter Your Email"
       />
+
       {/* Name Field (only for Signup) */}
-      {/* This field will only appear when isLogin is false (i.e., for signup) */}
       {!isLogin && (
         <InputField
-          HandleChange={HandleChange} // Handler for input change
-          Value={userData.Name} // Name value from Redux state
-          Name="Name" // Field name
-          type="text" // Input type
-          PlaceHolder="Enter Your Full Name" // Placeholder text for the input
+          HandleChange={HandleChange}
+          Value={userData.Name}
+          Name="Name"
+          type="text"
+          PlaceHolder="Enter Your Full Name"
         />
       )}
       {/* Password Field */}
       <InputField
-        Name="Password" // Field name
-        type="password" // Input type (password)
-        HandleChange={HandleChange} // Handler for input change
-        Value={userData.Password} // Password value from Redux state
-        PlaceHolder="Enter Your Password" // Placeholder text for the input
+        Name="Password"
+        type="password"
+        HandleChange={HandleChange}
+        Value={userData.Password}
+        PlaceHolder="Enter Your Password"
       />
+      {/* Note Section */}
+      <div className="text-sm text-gray-600 border-t pt-3 mt-2">
+        {isLogin ? (
+          <p>
+            <strong>Note:</strong> If you are a member of the Quiz Game of{' '}
+            <span className="text-blue-600 font-semibold">Global Grads</span>,
+            you can use your game credentials to log in here.
+          </p>
+        ) : (
+          <p>
+            <strong>Note:</strong> If you have already signed up for the Quiz
+            Game of{' '}
+            <span className="text-blue-600 font-semibold">Global Grads</span>,
+            you do not need to sign up again here. Please use your game login
+            credentials.
+          </p>
+        )}
+      </div>
     </div>
   )
 }
