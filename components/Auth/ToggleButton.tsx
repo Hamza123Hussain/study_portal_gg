@@ -1,5 +1,4 @@
 import React from 'react'
-
 const ToggleButton = ({
   isLogin,
   setIsLogin,
@@ -28,5 +27,4 @@ const ToggleButton = ({
     </div>
   )
 }
-
 export default ToggleButton
