@@ -2,8 +2,7 @@ import React from 'react'
 import InputField from './InputField' // Assuming InputField is a reusable component for inputs
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@/utils/Redux/Store'
-import { setUserAuthDetails } from '@/utils/Redux/Slice/UserSlice'
-
+import { setUserDetails } from '@/utils/Redux/User_Slice'
 const Form = ({ isLogin }: { isLogin: boolean }) => {
   // Use Redux to get current user details from the store
   const userData = useSelector((state: RootState) => state.userinput)
@@ -13,7 +12,7 @@ const Form = ({ isLogin }: { isLogin: boolean }) => {
   const HandleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // Dispatch updated user data to the Redux store
     Dispatch(
-      setUserAuthDetails({
+      setUserDetails({
         Name: isLogin
           ? userData.Name
           : e.target.name === 'Name'
