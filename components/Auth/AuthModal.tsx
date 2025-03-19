@@ -40,5 +40,4 @@ const AuthModal = () => {
     </Dialog>
   )
 }
-
 export default AuthModal
