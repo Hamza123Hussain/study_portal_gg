@@ -1,6 +1,6 @@
-import { DeployedAPIURL } from '@/utils/Interface/SignupInterface'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import { DeployedAPIURL } from './Login'
 export const RegisterUser = async (User: any) => {
   try {
     // Send POST request to the backend to register the user
