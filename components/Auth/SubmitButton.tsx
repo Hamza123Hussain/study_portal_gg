@@ -8,7 +8,6 @@ import { setUserAuthDetails } from '@/utils/Redux/Slice/UserSlice'
 const SubmitButton = ({ isLogin }: { isLogin: boolean }) => {
   const Dispatch = useDispatch()
   const User = useSelector((state: RootState) => state.userinput)
-
   const SubmitUserDetails = async () => {
     let Data
     if (isLogin) {
@@ -16,7 +15,6 @@ const SubmitButton = ({ isLogin }: { isLogin: boolean }) => {
     } else {
       Data = await RegisterUser(User)
     }
-
     if (Data) {
       // Dispatch the user details to Redux store
       Dispatch(
@@ -27,7 +25,6 @@ const SubmitButton = ({ isLogin }: { isLogin: boolean }) => {
           _id: Data._id,
         })
       )
-
       // Encrypt user data and store in localStorage
       encryptData({
         Name: Data.Name,
@@ -37,7 +34,6 @@ const SubmitButton = ({ isLogin }: { isLogin: boolean }) => {
       })
     }
   }
-
   return (
     <button
       onClick={SubmitUserDetails}
@@ -47,5 +43,4 @@ const SubmitButton = ({ isLogin }: { isLogin: boolean }) => {
     </button>
   )
 }
-
 export default SubmitButton
