@@ -15,15 +15,15 @@ import { RootState } from '@/utils/Redux/Store'
 const CartModal = ({ userId }: { userId: string }) => {
   const Cart = useSelector((state: RootState) => state.Cart)
   const Dispatch = useDispatch()
-  const GetCartCoursesOfUser = async () => {
-    const CartData = await fetchUserCart(userId)
-    if (CartData) {
-      Dispatch(SetCartData(CartData))
-    }
-  }
   useEffect(() => {
+    const GetCartCoursesOfUser = async () => {
+      const CartData = await fetchUserCart(userId)
+      if (CartData) {
+        Dispatch(SetCartData(CartData))
+      }
+    }
     GetCartCoursesOfUser()
-  }, [userId])
+  }, [userId, Dispatch])
   return (
     <Dialog>
       <DialogTrigger>
@@ -34,7 +34,7 @@ const CartModal = ({ userId }: { userId: string }) => {
           </div>
         </div>
       </DialogTrigger>
-      <DialogContent className="max-w-5xl w-full px-4 sm:px-6 md:px-12 bg-gray-100 rounded-lg shadow-xl transform transition-all duration-300">
+      <DialogContent className="max-w-6xl w-full px-4 sm:px-6 md:px-12 bg-gray-100 rounded-lg shadow-xl transform transition-all duration-300">
         <DialogHeader className="bg-indigo-600 text-white p-6 rounded-t-lg">
           <DialogTitle className="text-xl font-semibold">Your Cart</DialogTitle>
         </DialogHeader>
@@ -46,6 +46,13 @@ const CartModal = ({ userId }: { userId: string }) => {
           </div>
         ) : (
           <p className="text-center text-gray-600 py-8">Your cart is empty.</p>
+        )}
+        {Cart.Course.length > 0 && (
+          <div className="flex justify-end p-4">
+            <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg">
+              Checkout
+            </button>
+          </div>
         )}
       </DialogContent>
     </Dialog>
