@@ -1,6 +1,6 @@
-import { DeployedAPIURL } from '@/utils/Interface/SignupInterface'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import { DeployedAPIURL } from './Login'
 
 export const Signout = async () => {
   const Response = await axios(`${DeployedAPIURL}Api/User/Signout`)
