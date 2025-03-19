@@ -1,15 +1,18 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { CartSlice } from './Slice/CartSlice'
 import { PackageSlice } from './Slice/PackageSlice'
+import UserData from './Slice/UserSlice'
+import UserInput from './User_Slice'
 
 // Combine all reducers into one root reducer
 const rootReducer = combineReducers({
   Cart: CartSlice.reducer,
   // Add additional reducers here
-  // user: UserSlice.reducer,
+  user: UserData.reducer,
   // location: Location_Slice.reducer,
   // sort: SortSlice.reducer,
   PackageSlice: PackageSlice.reducer,
+  userinput: UserInput.reducer,
 })
 
 // Configure the store
