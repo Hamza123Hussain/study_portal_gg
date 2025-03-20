@@ -1,11 +1,12 @@
 import { handleFieldChange } from '@/functions/Form/HandleField'
-import { RootState } from '@/utils/Redux/Store/Store'
+import { RootState } from '@/utils/Redux/Store'
+
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 const AcademicLevelSelector: React.FC = () => {
   const dispatch = useDispatch()
-  const formData = useSelector((state: RootState) => state.FormSlice)
+  const formData = useSelector((state: RootState) => state.PersonalDetails)
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
