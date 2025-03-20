@@ -1,11 +1,12 @@
 import { addPreferredCountry } from '@/utils/Redux/Slice/FormSlice'
-import { RootState } from '@/utils/Redux/Store/Store'
+import { RootState } from '@/utils/Redux/Store'
+
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 const CountrySelector: React.FC = () => {
   const dispatch = useDispatch()
-  const formData = useSelector((state: RootState) => state.FormSlice)
+  const formData = useSelector((state: RootState) => state.PersonalDetails)
   const [customCountry, setCustomCountry] = useState('')
 
   // Handle checkbox change
