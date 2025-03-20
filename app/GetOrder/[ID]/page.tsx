@@ -3,6 +3,8 @@ import React from 'react'
 import CourseList from '@/components/Order/Course/CourseList'
 import MainOrderDetails from '@/components/Order/MainOrderDetails'
 import { Order } from '@/utils/Interface/OrderInterface'
+import { Check, Package, X } from 'lucide-react'
+import CompletePackageDetails from '@/components/Order/PackageDetails/CompletePackageDetails'
 const OrderDetailsWithDummyData = () => {
   const Order: Order = {
     Name: 'Hamza Hussain',
@@ -44,6 +46,22 @@ const OrderDetailsWithDummyData = () => {
         PlatForm: ['ApplyBoard', 'EDVOY'],
       },
     ],
+    Package: {
+      _id: '1',
+      PackageCountry: 'UK',
+      PackagePrice: '£500',
+      PackageType: 'Premium',
+      NumberOFUniversities: '5',
+      Applicationfeeincluded: true,
+      VisaAssistance: true,
+      SOP_LORAssistance: true,
+      IELTSAssistance: false,
+      UniversityShortlisting: true,
+      ScholarshipAssistance: false,
+      PostVisaServices: true,
+      UniversityApplicationAssistance: true,
+      VisaInterviewPreparation: true,
+    },
   }
   return (
     <div className="p-4 sm:p-8 bg-gradient-to-r from-blue-100 to-blue-300 min-h-screen">
@@ -54,6 +72,8 @@ const OrderDetailsWithDummyData = () => {
             Order Summary
           </h2>
           <MainOrderDetails Order={Order} />
+          {/* Package Details */}
+          <CompletePackageDetails Package={Order.Package} />
         </div>
         {/* Course List */}
         <CourseList Course={Order.Course} />
