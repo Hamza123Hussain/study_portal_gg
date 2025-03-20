@@ -15,4 +15,6 @@ export interface Course {
 export interface Cart {
   Course: Course[]
   totalOptions: number
+  _id: string
+  userId: string
 }
