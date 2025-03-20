@@ -11,7 +11,7 @@ const Step5: React.FC = () => {
         <div className="flex-container flex justify-center items-center min-h-screen">
           {/* Spinner loader with class-based styling */}
           <div className="spinner"></div>
-          <span>Form is being submitted...</span>
+          <span>Order is Being Placed .....</span>
         </div>
       ) : (
         <>
