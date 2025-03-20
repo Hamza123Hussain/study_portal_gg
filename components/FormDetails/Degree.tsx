@@ -1,10 +1,10 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from '@/utils/Redux/Store/Store'
 import { handleFieldChange } from '@/functions/Form/HandleField'
+import { RootState } from '@/utils/Redux/Store'
 const DegreeDetails: React.FC = () => {
   const dispatch = useDispatch()
-  const formData = useSelector((state: RootState) => state.FormSlice)
+  const formData = useSelector((state: RootState) => state.PersonalDetails)
   // Handler to update form data in Redux store
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
