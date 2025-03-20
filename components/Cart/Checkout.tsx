@@ -9,13 +9,14 @@ const Checkout = () => {
   const CartId = useSelector((state: RootState) => state.Cart._id)
   const PackageID = useSelector((state: RootState) => state.PackageSlice._id)
   const PlaceOrder = async () => {
-    const OrderPlaced = await createOrder({
+    const OrderData = {
       Name: User.Name,
       Email: User.Email,
       userId: User._id,
       Cart: CartId,
       PackageID: PackageID,
-    })
+    }
+    const OrderPlaced = await createOrder(OrderData)
     if (OrderPlaced) {
       Router.push(`/GetOrder/${OrderPlaced.OrderId}`)
     }
