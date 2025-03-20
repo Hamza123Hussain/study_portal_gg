@@ -1,13 +1,15 @@
 import { AddCourseToCart } from '@/functions/Cart/AddCourseToCart'
+import { Course } from '@/utils/CartInterface'
 import { AddToCart } from '@/utils/Redux/Slice/CartSlice'
+import { RootState } from '@/utils/Redux/Store'
 import React from 'react'
 import { FaShoppingCart } from 'react-icons/fa'
-import { useDispatch } from 'react-redux'
-
+import { useDispatch, useSelector } from 'react-redux'
 const AddToCartButton = ({ _id }: { _id: string }) => {
+  const UserID = useSelector((state: RootState) => state.user._id)
   const Dispatch = useDispatch()
   const AddCourse = async () => {
-    const CourseData: any = await AddCourseToCart('6t66t', _id)
+    const CourseData: Course = await AddCourseToCart(UserID, _id)
     if (CourseData) {
       Dispatch(AddToCart(CourseData))
     }
@@ -22,5 +24,4 @@ const AddToCartButton = ({ _id }: { _id: string }) => {
     </button>
   )
 }
-
 export default AddToCartButton
