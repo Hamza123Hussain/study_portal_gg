@@ -12,12 +12,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { SetCartData } from '@/utils/Redux/Slice/CartSlice'
 import { fetchUserCart } from '@/functions/Cart/GetUserCart'
 import { RootState } from '@/utils/Redux/Store'
-import { useRouter } from 'next/navigation'
+import Checkout from './Checkout'
 const CartModal = () => {
   const Cart = useSelector((state: RootState) => state.Cart)
   const User = useSelector((state: RootState) => state.user)
   const Dispatch = useDispatch()
-  const Router = useRouter()
   useEffect(() => {
     const GetCartCoursesOfUser = async () => {
       const CartData = await fetchUserCart(User._id)
@@ -50,16 +49,7 @@ const CartModal = () => {
         ) : (
           <p className="text-center text-gray-600 py-8">Your cart is empty.</p>
         )}
-        {Cart.Course.length > 0 && (
-          <div className="flex justify-end p-4">
-            <button
-              onClick={() => Router.push('/PersonalDetails')}
-              className="bg-indigo-600 text-white px-4 py-2 rounded-lg"
-            >
-              Checkout
-            </button>
-          </div>
-        )}
+        {Cart.Course.length > 0 && <Checkout />}
       </DialogContent>
     </Dialog>
   )
