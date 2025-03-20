@@ -1,11 +1,9 @@
 'use client'
-import AuthModal from '@/components/Auth/AuthModal'
 import MovingBetweenSteps from '@/components/Form/MovingBetweenSteps'
 import { RootState } from '@/utils/Redux/Store'
 import { Lock } from 'lucide-react'
 import React from 'react'
 import { useSelector } from 'react-redux'
-
 const PersonalDetails = () => {
   const User = useSelector((state: RootState) => state.user)
   return (
@@ -38,5 +36,4 @@ const PersonalDetails = () => {
     </div>
   )
 }
-
 export default PersonalDetails
