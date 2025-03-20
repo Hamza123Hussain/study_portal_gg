@@ -49,7 +49,10 @@ const CartModal = ({ userId }: { userId: string }) => {
         )}
         {Cart.Course.length > 0 && (
           <div className="flex justify-end p-4">
-            <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg">
+            <button
+              onClick={() => console.log('Cart ID : ', Cart)}
+              className="bg-indigo-600 text-white px-4 py-2 rounded-lg"
+            >
               Checkout
             </button>
           </div>
