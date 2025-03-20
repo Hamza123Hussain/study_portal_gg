@@ -24,7 +24,7 @@ const CompletePackageDetails = ({ Package }: { Package: Package }) => {
     },
   ]
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl shadow-md p-6 mt-6 transition-transform hover:scale-[1.02]">
+    <div className="bg-white rounded-2xl  mt-6 transition-transform hover:scale-[1.02]">
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
         <Package2 size={28} className="text-blue-600" />
