@@ -1,7 +1,10 @@
 import { ApiUrl } from '@/utils/CourseCardInterface'
 import axios from 'axios'
 export const createOrder = async (orderData: any) => {
-  const Response = await axios.post(`${ApiUrl}Api/Order/NewOrder`, orderData)
+  const Response = await axios.post(
+    `http://localhost:5001/Api/Order/NewOrder`,
+    orderData
+  )
   try {
     if (Response.status === 400) {
       return {
