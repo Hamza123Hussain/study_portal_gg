@@ -5,6 +5,8 @@ import { Cart, Course } from '@/utils/CartInterface'
 const initialState: Cart = {
   Course: [],
   totalOptions: 0,
+  _id: '',
+  userId: '',
 }
 
 export const CartSlice = createSlice({
