@@ -1,5 +1,4 @@
-import { FormData } from '@/utils/Main_Form_Interface'
-import { APIURL } from '@/utils/SignupInterface'
+import { APIURL, FormData } from '@/utils/Interface/Main_Form_Interface'
 import axios from 'axios'
 
 const createStudent = async (studentData: FormData) => {
