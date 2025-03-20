@@ -27,7 +27,7 @@ export interface FormData {
   visaHistory: string
   preferredCounselingMode: string
   heardAboutUs: string
-  Refferal:string
+  Refferal: string
 }
 
 export interface StepProps {
@@ -36,3 +36,4 @@ export interface StepProps {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => void
 }
+export const APIURL = 'https://crm-backend-azure-iota.vercel.app/'
