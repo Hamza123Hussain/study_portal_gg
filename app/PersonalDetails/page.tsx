@@ -1,3 +1,4 @@
+'use client'
 import MovingBetweenSteps from '@/components/Form/MovingBetweenSteps'
 import React from 'react'
 
