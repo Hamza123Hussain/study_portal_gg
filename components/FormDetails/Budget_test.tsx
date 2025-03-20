@@ -1,11 +1,12 @@
 import { handleFieldChange } from '@/functions/Form/HandleField'
-import { RootState } from '@/utils/Redux/Store/Store'
+import { RootState } from '@/utils/Redux/Store'
+
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 const FormComponent: React.FC = () => {
   const dispatch = useDispatch()
-  const formData = useSelector((state: RootState) => state.FormSlice)
+  const formData = useSelector((state: RootState) => state.PersonalDetails)
 
   // Default values for the fields
   const languageTest = formData.languageTest || '' // Ensuring value exists
