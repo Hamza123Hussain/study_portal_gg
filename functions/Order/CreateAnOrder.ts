@@ -3,7 +3,7 @@ import axios from 'axios'
 export const createOrder = async (orderData: any) => {
   const Response = await axios.post(
     `http://localhost:5001/Api/Order/NewOrder`,
-    orderData
+    { orderData }
   )
   try {
     if (Response.status === 400) {
