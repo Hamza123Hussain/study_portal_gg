@@ -53,7 +53,7 @@ const CompletePackageDetails = ({ Package }: { Package: Package }) => {
         <div className="flex flex-col bg-blue-50 border border-blue-200 rounded-lg p-4 shadow-sm hover:shadow-md transition duration-150">
           <span className="text-sm font-medium text-blue-700 mb-1">Price</span>
           <span className="text-lg font-semibold text-gray-800">
-            {Package.PackagePrice || 'N/A'}
+            {Package.PackagePrice || 'N/A'} PKR
           </span>
         </div>
         <div className="flex flex-col bg-blue-50 border border-blue-200 rounded-lg p-4 shadow-sm hover:shadow-md transition duration-150">
