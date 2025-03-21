@@ -1,8 +1,8 @@
-import { Course } from '@/utils/Interface/OrderInterface'
+import { CourseID } from '@/utils/Interface/OrderInterface'
 import { DollarSign, Globe, MapPin, University } from 'lucide-react'
 import React from 'react'
 
-const CourseCard = ({ course, idx }: { course: Course; idx: number }) => {
+const CourseCard = ({ course, idx }: { course: CourseID; idx: number }) => {
   return (
     <div
       key={course._id}
