@@ -1,6 +1,7 @@
 import { Package } from './PackageInterface'
 
 export interface Order {
+  _id: string
   Name: string
   Email: string
   PaymentMethod: string
@@ -8,11 +9,14 @@ export interface Order {
   Progress: string
   TotalAmount: number
   createdAt: string
-  Course: Course[]
-  Package: Package
+  Course: CourseID[]
+  PackageID: Package
 }
-export interface Course {
+export interface CourseID {
   _id: string
+  CourseID: CourseID
+}
+export interface CourseID {
   courseTitle: string
   universityName: string
   universityLocation: string
