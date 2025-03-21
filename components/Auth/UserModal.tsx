@@ -25,7 +25,7 @@ export function UserModal() {
       <DialogContent className="sm:max-w-[425px]">
         <div className="flex flex-col justify-between my-5 gap-3">
           <button
-            onClick={() => Router.push(`/MyOrders/${User._id}`)}
+            onClick={() => Router.push(`/MyOrder/${User._id}`)}
             className=" bg-blue-500 p-3 text-white border-2 border-black rounded-lg"
           >
             My Orders
