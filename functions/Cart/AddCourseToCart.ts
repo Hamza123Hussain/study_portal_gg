@@ -6,10 +6,13 @@ import { toast } from 'react-hot-toast' // Importing react-hot-toast
 export const AddCourseToCart = async (userId: string, CourseID: string) => {
   try {
     // Send POST request to backend API to add the course to the cart
-    const response = await axios.post(`${ApiUrl}Api/Cart/AddToCart`, {
-      userId,
-      CourseID,
-    })
+    const response = await axios.post(
+      `http://localhost:5001/Api/Cart/AddToCart`,
+      {
+        userId,
+        CourseID,
+      }
+    )
 
     // Handle successful response
     if (response.status === 200) {
