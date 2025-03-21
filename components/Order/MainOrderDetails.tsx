@@ -17,14 +17,7 @@ const MainOrderDetails = ({ Order }: { Order: Order }) => {
         {Order.PaymentMethod}
       </p>
       <p className="flex items-center gap-2">
-        {getStatusBadge(Order.PaymentStatus)}
-      </p>
-      <p>
-        <span className="font-semibold">Order Progress:</span> {Order.Progress}
-      </p>
-      <p>
-        <span className="font-semibold">Total Amount:</span> £
-        {Order.TotalAmount} GBP
+        Payment Status : {getStatusBadge(Order.PaymentStatus)}
       </p>
       <p>
         <span className="font-semibold">Order Date:</span>{' '}
